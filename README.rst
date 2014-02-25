@@ -12,6 +12,8 @@ Usage
 
 Command line:
 
+::
+
     $ python embed.py http://www.youtube.com/watch?v=-r3VuOyr9lk
     {   'default': {   'desc': 'SERJ TANKIAN PERFORMING HONKING ANTELOPE Ft APO(AUCKLAND PHILHARMONIA ORCHESTRA) HD QUALITY "ELECT THE DEAD SYMPHONY" DVD RIP{2010}',
                        'title': u'Serj Tankian - Honking Antelope {Elect The Dead Symphony} (HD/DVD Quality) - YouTube'},
@@ -53,6 +55,8 @@ Command line:
 You should use the 'global' values which are a copy of what's available in the different backends unless you want the information provided for a specific format/platform.
 
 To use it in your code, you can do:
+
+::
 
     import embed
     data = embed.get('http://www.youtube.com/watch?v=-r3VuOyr9lk')

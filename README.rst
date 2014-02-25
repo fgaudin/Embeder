@@ -58,7 +58,7 @@ To use it in your code, you can do:
 
 ::
 
-    import embed
+    from embeder import embed
     data = embed.get('http://www.youtube.com/watch?v=-r3VuOyr9lk')
 
 

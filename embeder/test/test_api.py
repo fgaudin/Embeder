@@ -1,5 +1,5 @@
 import unittest
-import embed
+from embeder import embed
 
 
 class TestApi(unittest.TestCase):

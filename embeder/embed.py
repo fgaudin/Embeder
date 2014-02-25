@@ -9,8 +9,6 @@ import pprint
 
 def parse(content):
     soup = BeautifulSoup(content, 'lxml')
-    pkgpath = os.path.join(os.path.dirname(__file__), 'backends')
-
     data = {'global': {
                'title': '',
                'desc': '',
@@ -22,8 +20,10 @@ def parse(content):
                'video_height': ''
            }}
 
+    pkgpath = os.path.join(os.path.dirname(__file__), 'backends')
+
     for _, name, _ in pkgutil.iter_modules([pkgpath]):
-        mod = __import__(".".join(['backends', name]),
+        mod = __import__(".".join(['embeder.backends', name]),
                          fromlist=['parser', 'MAPPING'])
         data[name] = {}
         backend_data = mod.parser(soup)

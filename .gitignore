@@ -4,3 +4,5 @@
 .settings
 MANIFEST
 dist
+build
+Embeder.egg-info

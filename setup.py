@@ -1,11 +1,12 @@
 from distutils.core import setup
+from setuptools import find_packages
 
 setup(
     name='Embeder',
     version='0.1.0',
     author='Francois Gaudin',
     author_email='contact@francoisgaudin.com',
-    packages=['embeder', 'embeder.test'],
+    packages=find_packages(),
     url='http://pypi.python.org/pypi/Embeder/',
     license='LICENSE.txt',
     description='Retrieves useful information about a link.',

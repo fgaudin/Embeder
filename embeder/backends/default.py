@@ -2,13 +2,13 @@ def parser(soup):
     data = {}
 
     try:
-        data['title'] = soup.title.text,
+        data['title'] = soup.find('title').text
     except:
         pass
 
     try:
         data['desc'] = soup.find('meta', {'name': 'description'}).attrs['content']
     except:
-        pass
+        data['desc'] = ''
 
     return data

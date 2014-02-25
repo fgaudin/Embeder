@@ -11,11 +11,6 @@ def parse(content):
     soup = BeautifulSoup(content, 'lxml')
     pkgpath = os.path.join(os.path.dirname(__file__), 'backends')
 
-    packages = []
-    if __name__ != '__main__':
-        packages.append(__name__)
-    packages.append('backends')
-
     data = {'global': {
                'title': '',
                'desc': '',
@@ -28,7 +23,7 @@ def parse(content):
            }}
 
     for _, name, _ in pkgutil.iter_modules([pkgpath]):
-        mod = __import__(".".join(packages + [name]),
+        mod = __import__(".".join(['backends', name]),
                          fromlist=['parser', 'MAPPING'])
         data[name] = {}
         backend_data = mod.parser(soup)

@@ -2,7 +2,7 @@
 Embeder
 =======
 
-Librairy to get the meta informations of a webpage and embed its content.
+Library to get the meta informations of a web page and embed its content.
 
 Typically what happens when you post a video on Facebook or Twitter.
 

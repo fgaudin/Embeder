@@ -3,7 +3,7 @@ from setuptools import find_packages
 
 setup(
     name='Embeder',
-    version='0.1.1',
+    version='0.1.2',
     author='Francois Gaudin',
     author_email='contact@francoisgaudin.com',
     packages=find_packages(),

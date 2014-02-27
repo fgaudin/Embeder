@@ -11,7 +11,10 @@ MAPPING = {
 }
 
 
-def parser(soup):
+def parse(soup, no_request, *args, **kwargs):
+    if no_request:
+        return {}
+
     try:
         oembed_link = soup.find('link', {'rel': 'alternate', 'type': 'application/json+oembed'}).attrs['href']
         oembed = requests.get(oembed_link)

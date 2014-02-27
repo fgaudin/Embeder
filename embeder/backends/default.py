@@ -1,4 +1,4 @@
-def parser(soup):
+def parse(soup, no_request, *args, **kwargs):
     data = {}
 
     try:

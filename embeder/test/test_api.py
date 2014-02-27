@@ -66,3 +66,12 @@ class TestApi(unittest.TestCase):
         self.assertEqual(doc['twitter']['video_height'], u"435")
         self.assertEqual(doc['twitter']['video_url'], u"https://vine.co/v/hOjHxFjDznT/card")
         self.assertEqual(doc['twitter']['video_width'], u"435")
+
+    def test_no_request(self):
+        doc = embed.get('http://www.youtube.com/watch?v=-r3VuOyr9lk',
+                        no_request=True)
+        self.assertEqual(doc['global']['title'], u'Serj Tankian - Honking Antelope {Elect The Dead Symphony} (HD/DVD Quality)')
+        self.assertEqual(doc['default']['title'], u'Serj Tankian - Honking Antelope {Elect The Dead Symphony} (HD/DVD Quality) - YouTube')
+        self.assertEqual(doc['opengraph']['title'], u'Serj Tankian - Honking Antelope {Elect The Dead Symphony} (HD/DVD Quality)')
+        self.assertEqual(doc['twitter']['title'], u'Serj Tankian - Honking Antelope {Elect The Dead Symphony} (HD/DVD Quality)')
+        self.assertEqual(doc['oembed'], {})

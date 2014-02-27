@@ -7,7 +7,7 @@ import pkgutil
 import pprint
 
 
-def parse(content):
+def parse(content, no_request):
     soup = BeautifulSoup(content, 'lxml')
     data = {'global': {
                'title': '',
@@ -24,9 +24,9 @@ def parse(content):
 
     for _, name, _ in pkgutil.iter_modules([pkgpath]):
         mod = __import__(".".join(['embeder.backends', name]),
-                         fromlist=['parser', 'MAPPING'])
+                         fromlist=['parse', 'MAPPING'])
         data[name] = {}
-        backend_data = mod.parser(soup)
+        backend_data = mod.parse(soup, no_request)
         data[name] = backend_data
 
         for key, value in backend_data.items():
@@ -41,9 +41,9 @@ def parse(content):
     return data
 
 
-def get(link):
+def get(link, no_request=False):
     response = requests.get(link)
-    return parse(response.text)
+    return parse(response.text, no_request)
 
 
 if __name__ == '__main__':

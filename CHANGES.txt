@@ -1,1 +1,3 @@
 v0.1, 2014-02-20 -- Initial release.
+v0.1.1, 2014-02-25 -- Fix README.
+v0.2, 2014-02-26 -- Added no_request option.
